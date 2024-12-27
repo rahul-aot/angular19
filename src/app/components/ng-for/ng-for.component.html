@@ -1,1 +1,43 @@
-<p>ng-for works!</p>
+<div class="row">
+    <div class="col-3">
+        <ul>
+            <li *ngFor="let city of cityList">
+                {{ city }}
+            </li>
+        </ul>
+    </div>
+    <div class="col-3">
+        <button *ngFor="let city of cityList" class="btn btn-primary max-1"> {{ city }}</button>
+    </div>
+    <div class="col-3">
+        <div *ngFor="let city of cityList"> {{ city }} </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <select>
+            <option *ngFor="let employee of employeeList" [value]="employee.empId">{{ employee.empName }}</option>
+        </select>
+    </div>
+    <div class="col-5">
+        <table>
+            <thead>
+                <tr>
+                    <th>sr no</th>
+                    <th>Employee ID</th>
+                    <th>Employee Name</th>
+                    <th>Employee City</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let employee of employeeList;let srno = index">
+                    <td>{{ srno+1 }}</td>
+                    <td>{{ employee.empId }}</td>
+                    <td>{{ employee.empName }}</td>
+                    <td>{{ employee.empCity }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
