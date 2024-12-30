@@ -1,28 +1,50 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" >Logo</a>
+      <a class="navbar-brand">Logo</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="mynavbar">
         <ul class="navbar-nav me-auto">
-          <li class="nav-item" >
-            <a class="nav-link active" routerLink="admin">admin</a>
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="admin">Admin</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="'dataBinding'">dataBinding</a>
+            <a class="nav-link" [routerLink]="'dataBinding'">Data Binding</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="ng-class">ng-class</a>
+          <!-- Directive Dropdown -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="directiveDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Directive
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="directiveDropdown">
+              <li><a class="dropdown-item" routerLink="ng-class">Ng-Class</a></li>
+              <li><a class="dropdown-item" routerLink="ng-style">Ng-Style</a></li>
+            </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="control-flow">Control flow</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="signal">signal</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="linkSignal">Link Signal</a>
+          <!-- Signals Dropdown -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="signalsDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Signals
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="signalsDropdown">
+              <li><a class="dropdown-item" routerLink="signal">Signal</a></li>
+              <li><a class="dropdown-item" routerLink="linkSignal">Link Signal</a></li>
+            </ul>
           </li>
         </ul>
         <form class="d-flex">
@@ -32,4 +54,5 @@
       </div>
     </div>
   </nav>
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
+  
