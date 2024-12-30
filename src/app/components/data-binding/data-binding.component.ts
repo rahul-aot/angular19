@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-data-binding',
@@ -17,7 +18,7 @@ export class DataBindingComponent {
   seletedCity: string = '';
 
 
-  constructor() {
+  constructor( private router: Router){ 
     console.log(this.firstName);
   }
 
@@ -29,5 +30,8 @@ export class DataBindingComponent {
     console.log('City changed');
   }
 
+  navigateToAdmin(){
+    this.router.navigateByUrl('/admin');
+  }
 
 }
