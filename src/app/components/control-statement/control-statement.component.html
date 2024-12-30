@@ -1,0 +1,72 @@
+<div class="row">
+    <div class="col-3">
+        @if(div1Visible == true){
+            <div class="bg-success p-3">
+                <div> div 1</div>
+            </div>
+        }
+    </div>
+    <div class="col-3">
+        
+            @if(isChecked == true){
+                <div class="bg-success p-3">
+                    <div> checked {{isChecked}}</div>
+                </div>
+            }
+            @else {
+                <div class="bg-danger p-3">
+                    <div> checked {{isChecked}}</div>
+                </div>
+            } 
+    </div>
+    <div class="col-3">
+        
+        <span></span>
+    </div>
+</div>
+
+<div class="row pt-2">
+    <div class="col-3">
+        <button class="btn btn-success" (click)="div1Visible = true">succcess</button>
+        <button class="btn btn-danger" (click)="div1Visible = false">Danger</button>
+    </div>
+    <div class="col-3">
+        <input type="checkbox" [(ngModel)]="isChecked">
+    </div>
+    <div class="col-3">
+    </div>
+</div>
+
+<div>
+    <div class="col-3">
+        <select>
+            @for (item of cityList; track $index){
+                <option value="@item">{{item}}</option>
+            }
+        </select>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <table>
+            <thead>
+            <tr>
+                <th>sr no</th>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
+                <th>Employee City</th>
+            </tr>
+            </thead>
+            <tbody>
+            @for (item of employeeList; track $index){
+                <tr>
+                    <td>{{$index + 1}}</td>
+                    <td>{{item.empId}}</td>
+                    <td>{{item.empName}}</td>
+                    <td>{{item.empCity}}</td>
+                </tr>
+            }
+        </tbody>
+        </table>
+    </div>
+</div>
