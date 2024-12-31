@@ -4,15 +4,22 @@
         <div class="col-md-4">
           <label for="validationCustom01" class="form-label">First name</label>
           <input type="text" formControlName="fName" class="form-control" id="validationCustom01" value="Mark" required>
-          <div class="valid-feedback">
-            Looks good!
+          <div class="text-danger">
+            @if (userForm.controls['fName'].errors?.['required'] && userForm.controls['fName'].touched && userForm.controls['fName'].dirty){
+                <span >This is required</span>
+            }
           </div>
         </div>
         <div class="col-md-4">
           <label for="validationCustom02" class="form-label">Last name</label>
           <input type="text" formControlName="lName" class="form-control" id="validationCustom02" value="Otto" required>
-          <div class="valid-feedback">
-            Looks good!
+          <div class="text-danger">
+            @if (userForm.controls['lName'].errors?.['required'] && userForm.controls['lName'].touched && userForm.controls['lName'].dirty){
+                <span >This is required</span>
+            }
+            @if (userForm.controls['lName'].errors?.['minlength'] && userForm.controls['lName'].touched && userForm.controls['lName'].dirty){
+                <span >Must be at least 4 characters long</span>
+            }
           </div>
         </div>
         <div class="col-md-4">
@@ -20,16 +27,20 @@
           <div class="input-group has-validation">
             <span class="input-group-text" id="inputGroupPrepend">&#64;</span>
             <input type="text" formControlName="userName" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-            <div class="invalid-feedback">
-              Please choose a username.
+            <div class="text-danger">
+              @if (userForm.controls['userName'].errors?.['email']) {
+                <span >Please enter a valid email address.</span>
+              }
             </div>
           </div>
         </div>
         <div class="col-md-6">
           <label for="validationCustom03" class="form-label">City</label>
           <input type="text" formControlName="city" class="form-control" id="validationCustom03" required>
-          <div class="invalid-feedback">
-            Please provide a valid city.
+          <div class="text-danger">
+            @if (userForm.controls['city'].errors?.['required'] && userForm.controls['city'].touched && userForm.controls['city'].dirty) {
+                <span >This is required.</span>
+            }
           </div>
         </div>
         <div class="col-md-3">
@@ -43,15 +54,19 @@
             <option value="andhra pradesh">andhra pradesh</option>
             <option value="maharashtra">maharashtra</option>
           </select>
-          <div class="invalid-feedback">
-            Please select a valid state.
+          <div class="text-danger">
+            @if (userForm.controls['state'].errors?.['required']) {
+                <span >This is required.</span>
+            }
           </div>
         </div>
         <div class="col-md-3">
           <label for="validationCustom05" class="form-label">Zip</label>
           <input type="text" formControlName="zip" class="form-control" id="validationCustom05" required>
-          <div class="invalid-feedback">
-            Please provide a valid zip.
+          <div class="text-danger">
+            @if (userForm.controls['zip'].errors?.['required'] && userForm.controls['zip'].touched && userForm.controls['zip'].dirty) {
+                <span >This is required.</span>
+            }
           </div>
         </div>
         <div class="col-12">
@@ -60,13 +75,15 @@
             <label class="form-check-label" for="invalidCheck">
               Agree to terms and conditions
             </label>
-            <div class="invalid-feedback">
-              You must agree before submitting.
+            <div class="text-danger">
+              @if (userForm.controls['isAggree'].errors?.['required'] && userForm.controls['isAggree'].touched && userForm.controls['isAggree'].dirty) {
+                <span >You must agree before submitting.</span>
+              }
             </div>
           </div>
         </div>
         <div class="col-12">
-          <button class="btn btn-primary" type="submit">Submit form</button>
+          <button class="btn btn-primary" [disabled]="!userForm.valid" type="submit">Submit form</button>
         </div>
       </form>
 </div>
