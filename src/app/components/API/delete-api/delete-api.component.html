@@ -1,1 +1,98 @@
-<p>delete-api works!</p>
+<div class="row">
+    <div class="col-8 text-center">
+        <h2> delete API Integration using Template Form</h2>
+    </div>
+    <div class="col-4">
+        <button class="btn btn-primary" (click)="getAllCars()">Get Cars</button>
+    </div>
+</div>
+
+<div class="row pt-2">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-header bg-warning">
+                <h5> Car List</h5>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Sr No</th>
+                            <th>Brand</th>
+                            <th>Model</th>
+                            <th>Req No</th>
+                            <th>Daily Rate</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (car of carData; track $index) {
+                            <tr>
+                                <td>{{ $index + 1 }}</td>
+                                <td>{{ car.brand }}</td>
+                                <td>{{ car.model }}</td>
+                                <td>{{ car.regNo }}</td>
+                                <td>{{ car.dailyRate }}</td>
+                                <td>
+                                    <button class="btn btn-primary" (click)="editCar(car)">Edit</button>
+                                    <button class="btn btn-danger" (click)="deleteCar(car.carId)">D</button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-5">
+        <div class="card">
+            <div class="card-header bg-warning">
+                <h5> Create New Car</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6 mt-2">
+                        <label>Reg No</label>
+                        <input type="text" [(ngModel)]="carObj.regNo" class="form-control" placeholder="Enter Reg No">
+                    </div>
+                    <div class="col-6 mt-2">
+                        <label>Brand</label>
+                        <input type="text" [(ngModel)]="carObj.brand" class="form-control" placeholder="Enter Brand">
+                    </div>
+                    <div class="col-6 mt-2">
+                        <label>Model</label>
+                        <input type="text" [(ngModel)]="carObj.model" class="form-control" placeholder="Enter Model">
+                    </div>
+                    <div class="col-6 mt-2">
+                        <label>Year</label>
+                        <input type="text" [(ngModel)]="carObj.year" class="form-control" placeholder="Enter Year">
+                    </div>
+                    <div class="col-6 mt-2">
+                        <label>Color</label>
+                        <input type="text" [(ngModel)]="carObj.color" class="form-control" placeholder="Enter Color">
+                    </div>
+                    <div class="col-6 mt-2">
+                        <label>Daily Rate</label>
+                        <input type="text" [(ngModel)]="carObj.dailyRate" class="form-control" placeholder="Enter Daily Rate">
+                    </div>
+                    <div class="col-6 mt-2">
+                        <label>Car Image URL</label>
+                        <input type="text" [(ngModel)]="carObj.carImage" class="form-control" placeholder="Enter url">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mt-2 text-center">
+                        @if (carObj.carId == 0) {
+                            <button type="reset" class="btn btn-secondary m-2" (click)="saveCar()">Save Car</button>
+                        }
+                        @else {
+                            <button type="reset" class="btn btn-secondary m-2" (click)="updateCar()">Update Car</button>
+                        }
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
