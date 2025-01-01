@@ -35,7 +35,7 @@ export class PostApiComponent {
     this.http.post('https://freeapi.miniprojectideas.com/api/CarRentalApp/CreateNewCar', this.carObj).subscribe((res:any)=>{
       console.log(res);
       if(res.result){
-        alert(res.message);
+        alert("CarRentalApp Successfully Created");
         this.getAllCars();
       }
       else{
