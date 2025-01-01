@@ -1,1 +1,68 @@
 <p>get-api works!</p>
+
+<div class="row">
+    <div class="col-3">
+        <button class="btn btn-primary" (click)="getUsers()">Get Users</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-success" (click)="getProducts()">Get Users</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <table>
+            <thead>
+                <tr>
+                    <th>no</th>
+                    <th>name</th>
+                    <th>username</th>
+                    <th>email</th>
+                    <th>phone</th>
+                    <th>website</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (user of users; track $index) {
+                    <tr>
+                        <td>{{ $index + 1 }}</td>
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.phone }}</td>
+                        <td>{{ user.website }}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <table>
+            <thead>
+                <tr>
+                    <th>no</th>
+                    <th>name</th>
+                    <th>price</th>
+                    <th>unit</th>
+                    <th>discount</th>
+                    <th>brand</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (list of productList; track $index) {
+                    <tr>
+                        <td>{{ $index + 1 }}</td>
+                        <td>{{ list.name }}</td>
+                        <td>{{ list.price }}</td>
+                        <td>{{ list.unit }}</td>
+                        <td>{{ list.discount }}</td>
+                        <td>{{ list.brand }}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

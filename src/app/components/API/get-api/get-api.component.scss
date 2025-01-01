@@ -1,0 +1,16 @@
+table{
+    margin: 30px;
+}
+th,td{
+    border: 1px solid rgb(255, 0, 0);
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+    white-space: nowrap;
+    overflow: hidden;
+    word-break: break-word;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+}
