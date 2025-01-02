@@ -2,6 +2,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Car } from '../../../model/car';
 
 @Component({
   selector: 'app-post-api',
@@ -12,16 +13,7 @@ import { FormsModule } from '@angular/forms';
 export class PostApiComponent implements OnInit {
 
   http = inject(HttpClient);
-  carObj: any ={
-    "carId": 0,
-    "brand": "",
-    "model": "",
-    "year": "",
-    "color": "",
-    "dailyRate": "",
-    "carImage": "",
-    "regNo": ""
-  }
+  carObj: Car = new Car();
   carData : any[] = [];
 
 
@@ -46,6 +38,7 @@ export class PostApiComponent implements OnInit {
       if(res.result){
         alert("CarRentalApp Successfully Created");
         this.getAllCars();
+        this.carObj = new Car(); // Reset form after successful creation
       }
       else{
         alert(res.message);
