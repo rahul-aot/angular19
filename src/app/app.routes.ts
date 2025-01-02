@@ -14,73 +14,87 @@ import { DeleteApiComponent } from './components/API/delete-api/delete-api.compo
 import { CustomerComponent } from './components/customer/customer.component';
 import { NgForComponent } from './components/ng-for/ng-for.component';
 import { NgIfComponent } from './components/ng-if/ng-if.component';
+import { LoginComponent } from './components/login/login.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: 'dataBinding',
+        redirectTo: 'login',
         pathMatch: 'full'
     },
     {
-        path: 'admin',
-        component: AdminComponent
+        path: 'login',
+        component: LoginComponent
     },
     {
-        path: 'dataBinding',
-        component: DataBindingComponent
-    },
-    {
-        path: 'ng-class',
-        component: NgClassComponent
-    },
-    {
-        path: 'control-flow',
-        component: ControlStatementComponent
-    },
-    {
-        path: 'signal',
-        component: SignalComponent
-    },
-    {
-        path: 'linkSignal',
-        component: LinkSignalComponent
-    },
-    {
-        path: 'templateForm',
-        component: TemplateFormComponent
-    },
-    {
-        path: 'reactiveForm',
-        component: ReactiveFormComponent
-    },
-    {
-        path: 'getApi',
-        component: GetApiComponent
-    },
-    {
-        path: 'postApi',
-        component: PostApiComponent
-    },
-    {
-        path: 'putApi',
-        component: PutApiComponent
-    },
-    {
-        path: 'deleteApi',
-        component: DeleteApiComponent
-    },
-    {
-        path: 'customer',
-        component: CustomerComponent
-    },
-    {
-        path: 'ng-if',
-        component: NgIfComponent
-    },
-    {
-        path: 'ng-for',
-        component: NgForComponent
+        path:'',
+        component: LayoutComponent,
+        children: [
+            {
+                path: 'admin',
+                component: AdminComponent
+            },
+            {
+                path: 'dataBinding',
+                component: DataBindingComponent
+            },
+            {
+                path: 'ng-class',
+                component: NgClassComponent
+            },
+            {
+                path: 'control-flow',
+                component: ControlStatementComponent
+            },
+            {
+                path: 'signal',
+                component: SignalComponent
+            },
+            {
+                path: 'linkSignal',
+                component: LinkSignalComponent
+            },
+            {
+                path: 'templateForm',
+                component: TemplateFormComponent
+            },
+            {
+                path: 'reactiveForm',
+                component: ReactiveFormComponent
+            },
+            {
+                path: 'getApi',
+                component: GetApiComponent
+            },
+            {
+                path: 'postApi',
+                component: PostApiComponent
+            },
+            {
+                path: 'putApi',
+                component: PutApiComponent
+            },
+            {
+                path: 'deleteApi',
+                component: DeleteApiComponent
+            },
+            {
+                path: 'customer',
+                component: CustomerComponent
+            },
+            {
+                path: 'ng-if',
+                component: NgIfComponent
+            },
+            {
+                path: 'ng-for',
+                component: NgForComponent
+            }
+        ]
+
     }
+    
     // {
     //     path: 'lifeCycle',
     //     component: LifeCycleComponent
