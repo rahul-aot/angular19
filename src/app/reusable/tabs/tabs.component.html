@@ -1,1 +1,6 @@
-<p>tabs works!</p>
+<div class="btn-group">
+    @for (tab of tabList; track $index) {
+        <button type="button" class="btn btn-primary" >{{tab}}</button>
+    }
+    
+</div>
