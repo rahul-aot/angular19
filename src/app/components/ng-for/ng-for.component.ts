@@ -1,13 +1,24 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe, JsonPipe, LowerCasePipe, UpperCasePipe } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-ng-for',
-  imports: [CommonModule],
+  imports: [CommonModule, UpperCasePipe, LowerCasePipe, JsonPipe, DatePipe],
   templateUrl: './ng-for.component.html',
   styleUrl: './ng-for.component.scss'
 })
 export class NgForComponent {
+
+  courseName: string = "Angular";
+
+  studentObj: any= {
+    name: "Rahul",
+    age: 25,
+    course: "Angular",
+    grade: "A"
+  }
+
+  currentDate: Date = new Date();
 
   cityList: string[]= ["pune","kerala","calicut"];
   employeeList: any[] = [

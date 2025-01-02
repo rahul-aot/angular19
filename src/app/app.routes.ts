@@ -12,7 +12,8 @@ import { PostApiComponent } from './components/API/post-api/post-api.component';
 import { PutApiComponent } from './components/API/put-api/put-api.component';
 import { DeleteApiComponent } from './components/API/delete-api/delete-api.component';
 import { CustomerComponent } from './components/customer/customer.component';
-import { LifeCycleComponent } from './components/life-cycle/life-cycle.component';
+import { NgForComponent } from './components/ng-for/ng-for.component';
+import { NgIfComponent } from './components/ng-if/ng-if.component';
 
 export const routes: Routes = [
     {
@@ -72,6 +73,14 @@ export const routes: Routes = [
         path: 'customer',
         component: CustomerComponent
     },
+    {
+        path: 'ng-if',
+        component: NgIfComponent
+    },
+    {
+        path: 'ng-for',
+        component: NgForComponent
+    }
     // {
     //     path: 'lifeCycle',
     //     component: LifeCycleComponent
