@@ -12,6 +12,7 @@ import { PostApiComponent } from './components/API/post-api/post-api.component';
 import { PutApiComponent } from './components/API/put-api/put-api.component';
 import { DeleteApiComponent } from './components/API/delete-api/delete-api.component';
 import { CustomerComponent } from './components/customer/customer.component';
+import { LifeCycleComponent } from './components/life-cycle/life-cycle.component';
 
 export const routes: Routes = [
     {
@@ -70,6 +71,10 @@ export const routes: Routes = [
     {
         path: 'customer',
         component: CustomerComponent
-    }
+    },
+    // {
+    //     path: 'lifeCycle',
+    //     component: LifeCycleComponent
+    // }
 
 ];
